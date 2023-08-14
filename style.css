@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 :root{
     --main-color:#161836;
     --name-text:#ccd6f6;
@@ -17,7 +18,7 @@ html{
   scroll-behavior: smooth;
 }
 body{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 1.4;
@@ -92,8 +93,8 @@ nav{
   transition-delay: 100ms;
 }
 a {
-      text-decoration: none;
-      color: #f0f0f0;
+  text-decoration: none;
+  color: #f0f0f0;
   }
 .monospace-text{
   color:var(--monospace-text);
@@ -125,6 +126,11 @@ a {
   transition:0.5s;
   translate: 0px -5px;
 }
+.logo-contact-ion:active{
+  color:var(--monospace-text);
+  transition:0.2s;
+  translate: 0px 5px;
+}
 /*about me*/
 #aboutme-section{
   display: flex;
@@ -152,6 +158,9 @@ a {
 #location-p{
   font-size:0.9em;
   color:#fff;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: left;
+  font-weight: 550;
 }
 #aboutme-h2{
   line-height: 130%;;
@@ -167,17 +176,78 @@ a {
 .project-img{
   width: 30%;
 }
+/*contact section*/
+.contact-link-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+}
+#contact-link-div-h2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+  width: 80%;
+}
+.contact-link > ion-icon{
+  font-size:2em;
+  padding-bottom: 1.8em;
+  padding-right: 2rem;
+}
+.contact-link > ion-icon:hover{
+  color:var(--monospace-text);
+  transition:0.5s;
+  translate: 0px -5px;
+}
+#mail_btn{
+  padding: 1.2em 3em;
+  border: 2px solid #8dc7b3;
+  background: none;
+  color:#fff;
+  border-radius: 90px;
+  font-size: 1.8rem;
+}
+#mail_btn:hover{
+  background-color: var(--monospace-text);
+  color: var(--main-color);
+  transition: 0.5s;
+  translate: 0px -5px;
+  font-weight: bold;
+
+}
+#contact-section-h2{
+  font-family: 'Poppins',sans-serif;
+  color:var(--name-text);
+  padding-bottom: 2rem;
+}
 /*responsitive*/
 @media screen and (max-width:767px) {
   .nav-list{
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding: 1.5rem;
   }
   #hello-word> h1{
-    font-size:3rem;
+    font-size:3.5rem;
   }
   .html-or-css-logo{
-    font-size:4vh;
+    font-size:4.5rem;
+  }
+  h2{
+    font-size:1.5rem;
+  }
+  #mail_btn{
+    font-size:1.5rem;
+    padding:1em 2.8em;
+    transition: 0;
+    translate: 0;
+  }
+  .contact-link > ion-icon{
+    font-size:1.8em;
+  }
+  *{
+    transition: none;
+    translate: 0;
   }
 }
 /*icon*/
@@ -186,40 +256,5 @@ a {
 }
 .html-or-css-logo{
   color:white;
-  font-size: 7vh;
+  font-size: 5rem;
 }
-.gg-arrow-right-o {
-  box-sizing: border-box;
-  position: relative;
-  display: block;
-  width: 22px;
-  height: 22px;
-  border: 2px solid;
-  transform: scale(var(--ggs,1));
-  border-radius: 20px
- }
- 
- .gg-arrow-right-o::after,
- .gg-arrow-right-o::before {
-  content: "";
-  display: block;
-  box-sizing: border-box;
-  position: absolute;
-  right: 4px
- }
- 
- .gg-arrow-right-o::after {
-  width: 6px;
-  height: 6px;
-  border-top: 2px solid;
-  border-right: 2px solid;
-  transform: rotate(45deg);
-  bottom: 6px
- }
- 
- .gg-arrow-right-o::before {
-  width: 10px;
-  height: 2px;
-  bottom: 8px;
-  background: currentColor
- }
