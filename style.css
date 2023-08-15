@@ -12,6 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  scroll-behavior:smooth;
 }
 html{
   font-size: 62.5%;
@@ -94,7 +95,7 @@ nav{
 }
 a {
   text-decoration: none;
-  color: #fff;
+  color: var(--name-text);
   }
 .monospace-text{
   color:var(--monospace-text);
@@ -120,10 +121,14 @@ a {
   font-size: 1.8em;
   padding-top: 40%;
   padding-right: 1rem;
+  transition: all;
+  -moz-transition: all 0.5s linear;
+ -o-transition: all 0.5s linear;
+ -webkit-transition: all 0.5s linear;
 }
 .logo-contact-ion:hover{
   color:var(--name-text);
-  transition:0.5s;
+  transition: all 0.5s ease;
   translate: 0px -5px;
 }
 .logo-contact-ion:active{
@@ -156,11 +161,12 @@ a {
   flex-direction : row;
 }
 #location-p{
-  font-size:0.9em;
-  color:#fff;
+  font-size:1em;
+  color:var(--name-text);
   font-family: 'JetBrains Mono', monospace;
   text-align: left;
   font-weight: 550;
+  letter-spacing:0.15em;
 }
 #aboutme-h2{
   line-height: 130%;;
@@ -194,6 +200,10 @@ a {
   font-size:2em;
   padding-bottom: 1.8em;
   padding-right: 2rem;
+  transition: all;
+  -moz-transition: all 0.5s linear;
+ -o-transition: all 0.5s linear;
+ -webkit-transition: all 0.5s linear;
 }
 .contact-link > ion-icon:hover{
   color:var(--monospace-text);
@@ -207,6 +217,11 @@ a {
   color:#fff;
   border-radius: 90px;
   font-size: 1.8rem;
+  transition: all;
+  -moz-transition: all 0.5s linear;
+ -o-transition: all 0.5s linear;
+ -webkit-transition: all 0.5s linear;
+ margin-bottom: 2rem;
 }
 #mail_btn:hover{
   background-color: var(--monospace-text);
@@ -214,7 +229,6 @@ a {
   transition: 0.5s;
   translate: 0px -5px;
   font-weight: bold;
-
 }
 #contact-section-h2{
   font-family: 'Poppins',sans-serif;
@@ -252,9 +266,9 @@ a {
 }
 /*icon*/
 #location-icon{
-  color:#fff;
+  color:var(--name-text);
 }
 .html-or-css-logo{
-  color:white;
+  color:var(--name-text);
   font-size: 5rem;
 }
