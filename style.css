@@ -182,6 +182,56 @@ a {
 .project-img{
   width: 30%;
 }
+.project-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+  width: 70%;
+}
+.project-title{
+  color: var(--name-text);
+  font-weight: bold;
+  margin-left: 8%;
+  margin-top: -7%;
+}
+.code-txt{
+  color:var(--main-color);
+  transition: all;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+}
+.project-title:hover .code-txt{
+  color:var(--monospace-text);
+  transition: 0.3s;
+}
+#show-all-btn{
+  padding: 0.6em 3em;
+  width: max-content;
+  border: 2px solid #8dc7b3;
+  background: none;
+  color:#fff;
+  border-radius: 90px;
+  font-size: 1.8rem;
+  transition: all;
+  -moz-transition: all 0.5s linear;
+ -o-transition: all 0.5s linear;
+ -webkit-transition: all 0.5s linear;
+ margin-bottom: 2rem;
+ margin-left:40% ;
+}
+#show-all-btn:hover{
+  background-color: var(--monospace-text);
+  color: var(--main-color);
+  transition: 0.5s;
+  translate: 0px -5px;
+  font-weight: bold;
+}
+.project-img{
+  padding: 3em 0 4em 0;
+  float: left;
+}
 /*contact section*/
 .contact-link-div{
   display: flex;
@@ -211,7 +261,7 @@ a {
   translate: 0px -5px;
 }
 #mail_btn{
-  padding: 1.2em 3em;
+  padding: 0.6em 3.5em;
   border: 2px solid #8dc7b3;
   background: none;
   color:#fff;
