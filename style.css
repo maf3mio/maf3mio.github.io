@@ -265,6 +265,7 @@ a {
   border: 2px solid #8dc7b3;
   background: none;
   color:#fff;
+  font-weight: bold;
   border-radius: 90px;
   font-size: 1.8rem;
   transition: all;
@@ -277,8 +278,8 @@ a {
   background-color: var(--monospace-text);
   color: var(--main-color);
   transition: 0.5s;
-  translate: 0px -5px;
   font-weight: bold;
+  padding: 0.6em 4em;
 }
 #contact-section-h2{
   font-family: 'Poppins',sans-serif;
@@ -309,9 +310,27 @@ a {
   .contact-link > ion-icon{
     font-size:1.8em;
   }
-  *{
-    transition: none;
-    translate: 0;
+}
+@media screen and(max-width:1920px){
+  .nav-list{
+    font-size: 1.8rem;
+    padding: 1.7rem;
+  }
+  #hello-word> h1{
+    font-size:4rem;
+  }
+  .html-or-css-logo{
+    font-size:5rem;
+  }
+  h2{
+    font-size:1.8rem;
+  }
+  #mail_btn{
+    font-size:1.8rem;
+    padding:1.3em 3em;
+  }
+  .contact-link > ion-icon{
+    font-size:2em;
   }
 }
 /*icon*/
@@ -321,4 +340,20 @@ a {
 .html-or-css-logo{
   color:var(--name-text);
   font-size: 5rem;
+}
+/*loading*/
+.loading {
+  color: transparent;
+  background: linear-gradient(100deg, #eceff1 30%, #f6f7f8 50%, #eceff1 70%);
+  background-size: 400%;
+  animation: loading 1.2s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
 }
