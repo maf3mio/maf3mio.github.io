@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're seventeen now</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .bg-choice {
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #eab308 100%);
+        }
+
+        .bg-heartfelt {
+            background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #f472b6 100%);
+        }
+
+        .bg-energetic {
+            background: linear-gradient(135deg, #ff3fdc 0%, #f97316 50%, #ef4444 100%);
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 16px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-family: ;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .note {
+            font-size: 0.875rem;
+            color: white;
+            opacity: 0.8;
+            margin-bottom: 32px;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .option-btn {
+            background: white;
+            border: none;
+            border-radius: 16px;
+            padding: 32px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .option-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .option-btn:hover .icon-circle {
+            transform: rotate(12deg);
+        }
+
+        .icon-heartfelt {
+            background: linear-gradient(135deg, #8ec1ff, #9523ff);
+        }
+
+        .icon-energetic {
+            background: linear-gradient(135deg, #c20994, #f91616);
+        }
+
+        .option-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .option-desc {
+            color: #6b7280;
+        }
+
+        .greeting-card {
+            background: white;
+            border-radius: 20px;
+            padding: 48px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .greeting-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 3rem;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .bounce {
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .greeting-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 24px;
+        }
+
+        .greeting-text {
+            color: #374151;
+            font-size: 1.125rem;
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+
+        .greeting-highlight {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 24px;
+        }
+
+        .purple-text {
+            color: #a855f7;
+        }
+
+        .orange-text {
+            color: #f97316;
+        }
+
+        .red-text {
+            color: #ef4444;
+        }
+
+        .sparkle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .sparkle {
+            font-size: 3rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+            /* Overlay that covers the entire screen */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 9999;
+        animation: fadeIn 0.3s ease-in;
+    }
+
+    .overlay.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Container for the image */
+    .popup-container {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        animation: zoomIn 0.3s ease-out;
+    }
+
+    @keyframes zoomIn {
+        from {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .popup-image {
+        max-width: 100%;
+        max-height: 90vh;
+        border-radius: 8px;
+        box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+    }
+
+    /* Close button */
+    .close-btn {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        width: 40px;
+        height: 40px;
+        background: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+    }
+
+    .close-btn:hover {
+        background: #f0f0f0;
+        transform: scale(1.1);
+    }
+    </style>
+</head>
+<body class="bg-choice" id="body">
+    <!-- Choice Screen -->
+    <div id="choiceScreen" class="container">
+        <h1>🎉 Happy Birthday, Xenia!</h1>
+        <p class="subtitle">Choose your birthday greeting:</p>
+        <p class="note">(You can only choose once!)</p>
+
+        <div class="options">
+            <button class="option-btn" onclick="makeChoice(1)">
+                <div class="icon-circle icon-heartfelt">👽</div>
+                <div class="option-title">Ordinary greeting</div>
+                <div class="option-desc">A standard greeting that everyone writes. Nothing unusual.</div>
+            </button>
+
+            <button class="option-btn" onclick="makeChoice(2)">
+                <div class="icon-circle icon-energetic">🐿️</div>
+                <div class="option-title">???</div>
+                <div class="option-desc">Oh, how did it even get there?..</div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Greeting 1: Heartfelt -->
+    <div id="greeting1" class="hidden">
+        <div class="greeting-card">
+            <div class="greeting-icon icon-heartfelt pulse">👽</div>
+            <h2 class="greeting-title">Happy Birthday! 🎂</h2>
+            
+            <p class="greeting-text">
+                On this special day, I want you to know how grateful I am to have you in my life. 
+                Your kindness, warmth, and genuine spirit make the world a brighter place.
+            </p>
+            <p class="greeting-text">
+                May this year bring you endless joy, exciting adventures, and all the happiness 
+                you deserve. Here's to another amazing year of friendship and memories!
+            </p>
+            <p class="greeting-highlight purple-text">
+                Wishing you the best birthday ever! 💝
+            </p>
+        </div>
+    </div>
+
+    <!-- Greeting 2: Fun & Energetic -->
+    <div id="greeting2" class="hidden">
+        <div class="greeting-card">
+            <div class="sparkle-container">
+                <span class="sparkle bounce">🐕</span>
+                <div class="greeting-icon icon-energetic">🐿️</div>
+                <span class="sparkle bounce">🐕</span>
+            </div>
+            <h2 class="greeting-title">🎉 HAPPY BIRTHDAY! 🎊</h2>
+            
+            <p class="greeting-text">
+                — Have you noticed everyone seems to be in so cheerful mood today? 🫣<br>
+— Yep, I have. It happens every year, don’t you remember? Are you getting older, for sure.😜 <br>
+— It’s very funny. You are a comedian… or maybe a clown. Whatever, do you want to tell me more about that event?😠<br>
+— It’s survival anniversary. And every person celebrate it on their special day, year after year. <br>
+— For real? 🤔<br>
+— Yeah. The most interesting thing is that no one knows how they managed to survive another year... Today is your day by the way. 🤗<br>
+— ARE YOU SERIOUS??? 🤯<br>
+— Yeah. Haven't you noticed that things have been going haywire for you lately? That's because you had the old version. Now you've updated to the new version 17.0. It should have new stability patches, so now you won't bang your head on the door when you open it.<br>
+— Thank God🙏🙏🛐<br>
+— And, as always, a new skill is temporarily added: "smile when people greet you." And, of course, the obligatory bonus — wishes for happiness, good luck, good health, money, success in getting into university, finding new friends, and simply living in a new city, as well as a good memory, because you have already forgotten last year's wishes.🥳<br>
+— Interesting. Thank you and the universe for not forgetting about this day of..😔<br>
+— The anniversary of survival, actually 🥸 🤓☝️<br>
+— Yes, this anniversary, because even in the morning it seemed to me that the universe was quietly hinting, "Hey, live your life normally, because this date is actually significant."🧐<br>
+— Yes, the main thing is to live normally and enjoy that day, because it's not every day that someone lives another year and doesn't break down. 😘🤗<br>
+            </p>
+            <p class="greeting-highlight red-text">
+                💭Oh my God, what have I just read...💭
+            </p>
+        </div>
+        <div class="overlay" id="overlay">
+    <div class="popup-container">
+        <button class="close-btn" id="closeBtn">×</button>
+        <!-- Replace with your own image URL -->
+        <img src="/birthday greetings/photo/photo_2025-11-24_10-10-41.jpg"
+             alt="Surprise!" 
+             class="popup-image">
+    </div>
+</div>
+<script>
+    // Set the delay in milliseconds (60000 = 1 minute)
+    const delay = 60000; // Change this: 5000 = 5 seconds, 60000 = 1 minute
+
+    // Show the popup after the specified delay
+    setTimeout(function() {
+        document.getElementById('overlay').classList.add('active');
+    }, delay);
+
+    // Close button functionality
+    document.getElementById('closeBtn').addEventListener('click', function() {
+        document.getElementById('overlay').classList.remove('active');
+    });
+
+    // Optional: Close when clicking outside the image
+    document.getElementById('overlay').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.classList.remove('active');
+        }
+    });
+
+    // Optional: Close with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            document.getElementById('overlay').classList.remove('active');
+        }
+    });
+</script>
+    </div>
+
+    <script>
+        // Check if a choice was already made
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedChoice = localStorage.getItem('birthdayChoice');
+            if (savedChoice) {
+                showGreeting(parseInt(savedChoice));
+            }
+        });
+
+            function makeChoice(choice) {
+            // Save the choice permanently
+            localStorage.setItem('birthdayChoice', choice);
+            showGreeting(choice);
+        }
+
+        function showGreeting(choice) {
+            const body = document.getElementById('body');
+            const choiceScreen = document.getElementById('choiceScreen');
+            const greeting1 = document.getElementById('greeting1');
+            const greeting2 = document.getElementById('greeting2');
+
+            // Hide choice screen
+            choiceScreen.classList.add('hidden');
+
+            // Show the selected greeting and change background
+            if (choice === 1) {
+                body.className = 'bg-heartfelt';
+                greeting1.classList.remove('hidden');
+            } else if (choice === 2) {
+                body.className = 'bg-energetic';
+                greeting2.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
